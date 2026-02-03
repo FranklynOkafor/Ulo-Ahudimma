@@ -57,6 +57,7 @@ if ( ! function_exists( 'ulo_ahudimma_register_doctors_cpt' ) ) {
 			'publicly_queryable'  => true,
 			'rewrite'             => [ 'slug' => 'doctors' ],
 			'show_in_rest'        => true, // for Gutenberg & REST API
+
 		];
 
 		register_post_type( 'doctor', $args );
