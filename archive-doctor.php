@@ -23,6 +23,21 @@
       <?php if ($specialty) : ?>
         <p><strong>Speciality:</strong> <?= esc_html($specialty) ?>?> </p>
       <?php endif; ?>
+
+      <?php if ($department) : ?>
+        <p><strong>Department:</strong>
+          <a href="<?php echo get_permalink($department->ID); ?>">
+            <?php echo esc_html($department->post_title); ?>
+          </a>
+        </p>
+      <?php endif; ?>
+
+      <?php if ($experience) : ?>
+        <p><strong>Experience:</strong> <?php echo esc_html($experience); ?> years</p>
+      <?php endif; ?>
+
+      <a href="<?php the_permalink(); ?>" class="btn">View Profile</a>
+
     </div>
   <?php } ?>
 </div>
