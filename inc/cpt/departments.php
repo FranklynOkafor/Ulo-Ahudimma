@@ -24,6 +24,7 @@ function register_departments_cpt()
     'publicly_queryable' => true,
     'show_ui'            => true,
     'show_in_menu'       => true,
+    'show_in_nav_menus' => true,
     'query_var'          => true,
     'rewrite'            => array('slug' => 'departments'),
     'capability_type'    => 'post',
