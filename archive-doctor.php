@@ -15,6 +15,13 @@
     } ?>
     <div class="doctor-card">
       <?php if ($photo) : ?>
+        <img src="<?= esc_url($photo) ?> ?>" alt="<?php the_title() ?>">
+      <?php endif; ?>
+
+      <h2><?php the_title() ?></h2>
+
+      <?php if ($specialty) : ?>
+        <p><strong>Speciality:</strong> <?= esc_html($specialty) ?>?> </p>
       <?php endif; ?>
     </div>
   <?php } ?>
