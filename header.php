@@ -39,6 +39,11 @@
         )
         ?>
       </nav>
-      <a href="<?php home_url('/book-appointment')?>" class="btn appointment-btn">Book an Appointment</a>
+      <a href="<?php home_url('/book-appointment') ?>" class="appointment-btn">Book an Appointment</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
