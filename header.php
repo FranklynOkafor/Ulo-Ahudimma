@@ -39,5 +39,6 @@
         )
         ?>
       </nav>
+      <a href="<?php home_url('/book-appointment')?>" class="btn appointment-btn">Book an Appointment</a>
     </div>
   </header>

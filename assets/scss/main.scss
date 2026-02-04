@@ -1,0 +1,35 @@
+// main.scss
+
+// Import all partials 
+
+// Base files
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/reset';
+@use 'base/typography';
+
+// Component files
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+
+// Layout files
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/navigation';
+
+// Pages files
+@use 'pages/appointment';
+@use 'pages/department';
+@use 'pages/doctor';
+@use 'pages/home';
+
+// Add some base styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+h1, h2, h3 {
+  color: #222;
+}
