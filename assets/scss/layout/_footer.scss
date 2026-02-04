@@ -1,0 +1,790 @@
+/* ========================================
+   FOOTER STYLES
+   Healthcare Website Theme
+   Based on EdesCare Design Pattern
+   ======================================== */
+
+/* ========== SITE FOOTER ========== */
+.site-footer {
+  background-color: var(--navy-dark, #0A1F3D);
+  color: var(--white, #FFFFFF);
+  padding: 3rem 0 2rem;
+  margin-top: auto;
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-blue, #2196F3) 0%,
+    var(--primary-blue-dark, #1976D2) 50%,
+    var(--primary-blue, #2196F3) 100%
+  );
+}
+
+.site-footer .container {
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ========== FOOTER NAVIGATION ========== */
+.footer-navigation {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-menu li {
+  position: relative;
+}
+
+.footer-menu a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium, 500);
+  transition: var(--transition-fast, all 0.2s ease);
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.footer-menu a:hover,
+.footer-menu a:focus {
+  color: var(--white, #FFFFFF);
+}
+
+.footer-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue, #2196F3);
+  transition: width 0.3s ease;
+}
+
+.footer-menu a:hover::after,
+.footer-menu a:focus::after {
+  width: 100%;
+}
+
+/* Active menu item */
+.footer-menu .current-menu-item > a,
+.footer-menu .current_page_item > a {
+  color: var(--white, #FFFFFF);
+}
+
+/* ========== SITE INFO / COPYRIGHT ========== */
+.site-info {
+  text-align: center;
+}
+
+.site-info p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Tablet */
+@media (max-width: 991px) {
+  .site-footer {
+    padding: 2.5rem 0 1.75rem;
+  }
+  
+  .footer-menu {
+    gap: 1.5rem;
+  }
+  
+  .footer-navigation {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .site-footer {
+    padding: 2rem 0 1.5rem;
+  }
+  
+  .footer-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-menu a {
+    font-size: 1rem;
+  }
+  
+  .footer-navigation {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .site-info p {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  .site-footer {
+    background-color: transparent;
+    color: #000000;
+    border-top: 2px solid #000000;
+  }
+  
+  .site-footer::before {
+    display: none;
+  }
+  
+  .footer-navigation {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   ENHANCED FOOTER STYLES
+   Healthcare Website Theme
+   ======================================== */
+
+/* ========== SITE FOOTER ========== */
+.site-footer {
+  background-color: var(--navy-dark, #0A1F3D);
+  color: var(--white, #FFFFFF);
+  margin-top: auto;
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-blue, #2196F3) 0%,
+    var(--primary-blue-dark, #1976D2) 50%,
+    var(--primary-blue, #2196F3) 100%
+  );
+}
+
+/* ========== FOOTER WIDGETS SECTION ========== */
+.footer-widgets {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-widget-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.footer-widget {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Widget Titles */
+.footer-widget .widget-title,
+.footer-widget h3 {
+  color: var(--white, #FFFFFF);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold, 600);
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer-widget .widget-title::after,
+.footer-widget h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-blue, #2196F3);
+  border-radius: 2px;
+}
+
+/* Widget Links */
+.footer-widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-widget ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-widget ul li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-widget a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: var(--transition-fast, all 0.2s ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-widget a:hover,
+.footer-widget a:focus {
+  color: var(--primary-blue, #2196F3);
+  padding-left: 0.25rem;
+}
+
+.footer-widget a::before {
+  content: '→';
+  opacity: 0;
+  transition: var(--transition-fast, all 0.2s ease);
+  transform: translateX(-5px);
+}
+
+.footer-widget a:hover::before,
+.footer-widget a:focus::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Widget Text/Paragraph */
+.footer-widget p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+/* ========== FOOTER LOGO & BRANDING ========== */
+.footer-logo {
+  margin-bottom: 1.25rem;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  max-width: 180px;
+  filter: brightness(0) invert(1); /* Make logo white if dark */
+}
+
+.footer-site-title {
+  margin: 0 0 1rem;
+}
+
+.footer-site-title a {
+  color: var(--white, #FFFFFF);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold, 700);
+  transition: var(--transition-fast, all 0.2s ease);
+}
+
+.footer-site-title a:hover,
+.footer-site-title a:focus {
+  color: var(--primary-blue, #2196F3);
+}
+
+.footer-description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  max-width: 280px;
+}
+
+/* ========== FOOTER CONTACT INFO ========== */
+.footer-contact {
+  margin-top: 1.5rem;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.footer-contact p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-contact .icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition-fast, all 0.2s ease);
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus {
+  color: var(--primary-blue, #2196F3);
+}
+
+.footer-contact a::before {
+  display: none;
+}
+
+/* ========== FOOTER BOTTOM ========== */
+.footer-bottom {
+  padding: 2rem 0;
+}
+
+.footer-bottom .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* ========== FOOTER NAVIGATION ========== */
+.footer-navigation {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-menu li {
+  position: relative;
+}
+
+.footer-menu a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium, 500);
+  transition: var(--transition-fast, all 0.2s ease);
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.footer-menu a:hover,
+.footer-menu a:focus {
+  color: var(--white, #FFFFFF);
+}
+
+.footer-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue, #2196F3);
+  transition: width 0.3s ease;
+}
+
+.footer-menu a:hover::after,
+.footer-menu a:focus::after {
+  width: 100%;
+}
+
+.footer-menu .current-menu-item > a,
+.footer-menu .current_page_item > a {
+  color: var(--white, #FFFFFF);
+}
+
+/* ========== SOCIAL LINKS ========== */
+.footer-social {
+  width: 100%;
+  text-align: center;
+}
+
+.social-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white, #FFFFFF);
+  text-decoration: none;
+  transition: var(--transition-smooth, all 0.3s ease);
+  font-size: 1.125rem;
+}
+
+.social-menu a:hover,
+.social-menu a:focus {
+  background-color: var(--primary-blue, #2196F3);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+
+/* Social Icons (you can add specific icons for each platform) */
+.social-menu a[href*="facebook.com"]::before { content: 'f'; font-family: sans-serif; }
+.social-menu a[href*="twitter.com"]::before,
+.social-menu a[href*="x.com"]::before { content: '𝕏'; font-family: sans-serif; }
+.social-menu a[href*="instagram.com"]::before { content: '📷'; }
+.social-menu a[href*="linkedin.com"]::before { content: 'in'; font-family: sans-serif; }
+.social-menu a[href*="youtube.com"]::before { content: '▶'; font-family: sans-serif; }
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ========== SITE INFO / COPYRIGHT ========== */
+.site-info {
+  width: 100%;
+  text-align: center;
+}
+
+.site-info p {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+.site-info p:last-child {
+  margin-bottom: 0;
+}
+
+.site-info a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition-fast, all 0.2s ease);
+}
+
+.site-info a:hover,
+.site-info a:focus {
+  color: var(--primary-blue, #2196F3);
+}
+
+.footer-credits {
+  font-size: 0.8125rem;
+}
+
+/* ========== BACK TO TOP BUTTON ========== */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-blue, #2196F3);
+  color: var(--white, #FFFFFF);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+  transition: var(--transition-smooth, all 0.3s ease);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  background-color: var(--primary-blue-dark, #1976D2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(33, 150, 243, 0.5);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .footer-widget-area {
+    grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footer-widget-area {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .footer-widgets {
+    padding: 3rem 0 2.5rem;
+  }
+  
+  .footer-widget-area {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .footer-bottom {
+    padding: 1.75rem 0;
+  }
+  
+  .footer-menu {
+    gap: 1.5rem;
+  }
+  
+  .back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .footer-widgets {
+    padding: 2.5rem 0 2rem;
+  }
+  
+  .footer-widget-area {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-widget .widget-title,
+  .footer-widget h3 {
+    font-size: 1.0625rem;
+  }
+  
+  .footer-bottom {
+    padding: 1.5rem 0;
+  }
+  
+  .footer-bottom .container {
+    gap: 1.25rem;
+  }
+  
+  .footer-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-menu a {
+    font-size: 1rem;
+  }
+  
+  .social-menu {
+    gap: 0.75rem;
+  }
+  
+  .social-menu a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .site-info p {
+    font-size: 0.8125rem;
+  }
+  
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .back-to-top svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .footer-description {
+    max-width: 100%;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 375px) {
+  .footer-widgets {
+    padding: 2rem 0 1.5rem;
+  }
+  
+  .footer-widget-area {
+    gap: 2rem;
+  }
+}
+
+/* ========== DARK MODE ADJUSTMENTS (Optional) ========== */
+@media (prefers-color-scheme: dark) {
+  .footer-logo img {
+    filter: none; /* Remove white filter if logo already looks good */
+  }
+}
+
+/* ========== HIGH CONTRAST MODE ========== */
+@media (prefers-contrast: high) {
+  .site-footer {
+    border-top: 3px solid currentColor;
+  }
+  
+  .footer-widget a,
+  .footer-menu a,
+  .social-menu a {
+    border: 1px solid transparent;
+  }
+  
+  .footer-widget a:focus,
+  .footer-menu a:focus,
+  .social-menu a:focus {
+    border-color: currentColor;
+  }
+}
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+  .footer-widget a,
+  .footer-menu a,
+  .social-menu a,
+  .back-to-top,
+  .site-info a {
+    transition: none;
+  }
+  
+  .back-to-top:hover,
+  .social-menu a:hover {
+    transform: none;
+  }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  .site-footer {
+    background-color: transparent;
+    color: #000000;
+    border-top: 2px solid #000000;
+  }
+  
+  .site-footer::before {
+    display: none;
+  }
+  
+  .footer-widgets,
+  .footer-navigation,
+  .footer-social,
+  .back-to-top {
+    display: none;
+  }
+  
+  .site-info {
+    padding: 1rem 0;
+  }
+  
+  .site-info p {
+    color: #000000;
+  }
+}
+
+/* ========== STICKY FOOTER (Optional) ========== */
+/* Add this to your main layout if you want footer to stick to bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}

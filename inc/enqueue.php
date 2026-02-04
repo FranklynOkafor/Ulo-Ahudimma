@@ -16,6 +16,11 @@ function ulo_ahudimma_enqueue_assets()
 		$theme_version
 	);
 
+
+
+
+
+
 	// Main JavaScript file
 	wp_enqueue_script(
 		'ulo-ahudimma-main',
@@ -33,5 +38,14 @@ function ulo_ahudimma_enqueue_assets()
 		'1.0.0',
 		true // Load in footer
 	);
+
+	// Footer Script
+	wp_enqueue_script(
+		'ahudimma-footer-scripts',
+		get_template_directory_uri() . '/assets/js/footer-scripts.js',
+		array(),
+		filemtime(get_template_directory() . '/assets/js/footer.js'),
+		true
+);
 }
 add_action('wp_enqueue_scripts', 'ulo_ahudimma_enqueue_assets');
