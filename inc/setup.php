@@ -20,6 +20,13 @@ if (! function_exists('ulo_ahudimma_theme_setup')) {
     // Enable featured images
     add_theme_support('post-thumbnails');
 
+    add_theme_support('custom-logo', array(
+      'height'      => 80,
+      'width'       => 200,
+      'flex-height' => true,
+      'flex-width'  => true,
+    ));
+
     // Enable HTML5 markup support
     add_theme_support(
       'html5',
@@ -54,10 +61,9 @@ if (! function_exists('ulo_ahudimma_theme_setup')) {
     );
 
     // Set Content Width
-    if ( ! isset( $content_width ) ) {
+    if (! isset($content_width)) {
       $content_width = 1200;
     }
-    
   }
 }
 add_action('after_setup_theme', 'ulo_ahudimma_theme_setup');
