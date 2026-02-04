@@ -1,9 +1,10 @@
 /* ========================================
-   HEADER STYLES - Healthcare Website
-   Based on EdesCare Design Pattern
+   HEADER STYLES - WordPress Customizer Compatible
+   Healthcare Website Theme
    ======================================== */
 
 /* ========== ROOT VARIABLES ========== */
+/* These will be overridden by Customizer in wp_head */
 :root {
   /* Colors */
   --primary-blue: #2196F3;
@@ -21,13 +22,27 @@
   --container-max-width: 1200px;
   --header-padding: 1.25rem 0;
   --nav-gap: 2.5rem;
+  --logo-height: 40px;
   
   /* Typography */
   --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --base-font-size: 16px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --body-line-height: 1.6;
+  
+  /* Buttons */
+  --btn-padding: 12px 28px;
+  --btn-font-size: 16px;
+  --btn-border-radius: 6px;
+  
+  /* Header */
+  --header-bg-color: #FFFFFF;
+  
+  /* Layout */
+  --border-radius: 8px;
   
   /* Transitions */
   --transition-smooth: all 0.3s ease;
@@ -48,8 +63,9 @@
 
 body {
   font-family: var(--font-primary);
+  font-size: var(--base-font-size);
   color: var(--text-dark);
-  line-height: 1.6;
+  line-height: var(--body-line-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,17 +89,14 @@ ul, ol {
 
 @media (min-width: 1400px) {
   .container {
-    max-width: 1320px;
+    max-width: calc(var(--container-max-width) + 120px);
   }
 }
 
 /* ========== HEADER ========== */
 .site-header {
-  background-color: var(--white);
+  background-color: var(--header-bg-color);
   padding: var(--header-padding);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   box-shadow: var(--shadow-header);
   transition: var(--transition-smooth);
 }
@@ -95,7 +108,7 @@ ul, ol {
   gap: 2rem;
 }
 
-/* Scrolled state */
+/* Scrolled state - add via JavaScript */
 .site-header.scrolled {
   padding: 0.75rem 0;
   box-shadow: 0 4px 12px rgba(10, 31, 61, 0.12);
@@ -115,7 +128,7 @@ ul, ol {
 }
 
 .site-branding .custom-logo {
-  height: 40px;
+  height: var(--logo-height);
   width: auto;
   max-width: 180px;
   transition: var(--transition-smooth);
@@ -133,17 +146,6 @@ ul, ol {
 .site-title:hover {
   color: var(--primary-blue);
 }
-
-/* Logo icon styling (if applicable) */
-// .site-title::before {
-//   content: '';
-//   display: inline-block;
-//   width: 32px;
-//   height: 32px;
-//   background-color: var(--primary-blue);
-//   border-radius: 6px;
-//   /* Add your logo background image here if needed */
-// }
 
 /* ========== PRIMARY NAVIGATION ========== */
 .primary-navigation {
@@ -204,10 +206,6 @@ ul, ol {
 }
 
 /* ========== DROPDOWN MENUS ========== */
-.pimary-menu li {
-  position: relative;
-}
-
 .pimary-menu .sub-menu {
   position: absolute;
   top: 100%;
@@ -216,7 +214,7 @@ ul, ol {
   min-width: 220px;
   padding: 0.75rem 0;
   margin-top: 0.5rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
   opacity: 0;
   visibility: hidden;
@@ -254,12 +252,12 @@ ul, ol {
 /* ========== BUTTON STYLES ========== */
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.75rem;
-  font-size: 1rem;
+  padding: var(--btn-padding);
+  font-size: var(--btn-font-size);
   font-weight: var(--font-weight-semibold);
   text-align: center;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--btn-border-radius);
   cursor: pointer;
   transition: var(--transition-smooth);
   white-space: nowrap;
@@ -427,11 +425,6 @@ ul, ol {
 
 /* Very small devices */
 @media (max-width: 375px) {
-  .site-title::before {
-    width: 24px;
-    height: 24px;
-  }
-  
   .appointment-btn span {
     display: none;
   }
