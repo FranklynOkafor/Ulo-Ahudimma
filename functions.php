@@ -13,3 +13,6 @@ require_once get_template_directory() . '/inc/customizer/customizer.php';
 require_once get_template_directory() . '/inc/customizer/colors.php';
 require_once get_template_directory() . '/inc/customizer/typography.php';
 require_once get_template_directory() . '/inc/customizer/layout.php';
+
+// Theme helper
+require_once get_template_directory() . 'inc/helper.php';
