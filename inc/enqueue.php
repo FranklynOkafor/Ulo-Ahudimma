@@ -8,6 +8,10 @@ function ulo_ahudimma_enqueue_assets()
 
 	$theme_version = wp_get_theme()->get('Version');
 
+	// Dashicons styling
+	wp_enqueue_style('dashicons');
+
+	
 	// Main stylesheet (compiled from SCSS)
 	wp_enqueue_style(
 		'ulo-ahudimma-main',
