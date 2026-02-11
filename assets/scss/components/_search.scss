@@ -1,0 +1,40 @@
+.ulo-search-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.ulo-search-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+}
+
+.ulo-search-box{
+  position: relative;
+  max-width: 600px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.ulo-search-input{
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.ulo-search-close{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}

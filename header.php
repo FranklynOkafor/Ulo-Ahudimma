@@ -46,5 +46,18 @@
         <span></span>
         <span></span>
       </button>
+
     </div>
   </header>
+  <div class="ulo-search-modal">
+    <div class="ulo-search-overlay">
+
+    </div>
+    <div class="ulo-search-box">
+      <button class="ulo-search-close">&times</button>
+    </div>
+    <form class="ulo-search-form">
+      <input type="text" class="ulo-search-input" placeholder="Search Doctors..." autocomplete="off">
+      <div class="ulo-search-results"></div>
+    </form>
+  </div>
