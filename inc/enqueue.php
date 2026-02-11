@@ -46,6 +46,19 @@ function ulo_ahudimma_enqueue_assets()
 		array(),
 		filemtime(get_template_directory() . '/assets/js/footer.js'),
 		true
-);
+	);
+
+	// Appointment Script
+	wp_enqueue_script(
+		'ahudimma-appointment-scripts',
+		get_template_directory_uri() . '/assets/js/appointment.js',
+		['jquery'],
+		filemtime(get_template_directory() . '/assets/js/appointment.js'),
+		true
+	);
+	wp_localize_script('ahudimma-appointment-scripts', 'ahudimmaAjax', [
+		'ajax_url' => admin_url('admin-ajax.php'),
+		'nonce'    => wp_create_nonce('load_doctors_nonce')
+]);
 }
 add_action('wp_enqueue_scripts', 'ulo_ahudimma_enqueue_assets');
