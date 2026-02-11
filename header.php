@@ -39,6 +39,7 @@
         )
         ?>
       </nav>
+      <button class="ulo-search-toggle" aria-label="Open Search"><span class="dashicons dashicons-search"></span></button>
       <a href="<?php echo site_url('/book-appointment') ?>" class="appointment-btn">Book an Appointment</a>
       <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
         <span></span>

@@ -16,3 +16,6 @@ require_once get_template_directory() . '/inc/customizer/layout.php';
 
 // Theme helper
 require_once get_template_directory() . '/inc/helpers.php';
+
+// Search
+require_once get_template_directory() . '/inc/search.php';
