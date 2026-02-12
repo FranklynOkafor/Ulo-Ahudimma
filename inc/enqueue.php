@@ -11,7 +11,7 @@ function ulo_ahudimma_enqueue_assets()
 	// Dashicons styling
 	wp_enqueue_style('dashicons');
 
-	
+
 	// Main stylesheet (compiled from SCSS)
 	wp_enqueue_style(
 		'ulo-ahudimma-main',
@@ -52,6 +52,16 @@ function ulo_ahudimma_enqueue_assets()
 		true
 	);
 
+
+	// Search Script
+	wp_enqueue_script(
+		'ahudimma-search-scripts',
+		get_template_directory_uri() . '/assets/js/search.js',
+		array(),
+		filemtime(get_template_directory() . '/assets/js/search.js'),
+		true
+	);
+	
 	// Appointment Script
 	wp_enqueue_script(
 		'ahudimma-appointment-scripts',
@@ -63,6 +73,6 @@ function ulo_ahudimma_enqueue_assets()
 	wp_localize_script('ahudimma-appointment-scripts', 'ahudimmaAjax', [
 		'ajax_url' => admin_url('admin-ajax.php'),
 		'nonce'    => wp_create_nonce('load_doctors_nonce')
-]);
+	]);
 }
 add_action('wp_enqueue_scripts', 'ulo_ahudimma_enqueue_assets');
