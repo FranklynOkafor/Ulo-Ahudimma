@@ -131,3 +131,15 @@ function ahudimma_load_doctors_by_department()
 
 add_action('wp_ajax_load_doctors_by_department', 'ahudimma_load_doctors_by_department');
 add_action('wp_ajax_nopriv_load_doctors_by_department', 'ahudimma_load_doctors_by_department');
+
+
+
+
+
+
+
+
+
+
+
+

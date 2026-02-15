@@ -89,5 +89,15 @@ function ulo_ahudimma_enqueue_assets()
 		'ajax_url' => admin_url('admin-ajax.php'),
 		'nonce'    => wp_create_nonce('load_doctors_nonce')
 	]);
+
+
+	// Cintact Script
+	wp_enqueue_script(
+		'ahudimma-contact-scripts',
+		get_template_directory_uri() . '/assets/js/contact.js',
+		['jquery'],
+		filemtime(get_template_directory() . '/assets/js/contact.js'),
+		true
+	);
 }
 add_action('wp_enqueue_scripts', 'ulo_ahudimma_enqueue_assets');

@@ -19,3 +19,6 @@ require_once get_template_directory() . '/inc/helpers.php';
 
 // Filter AJAX handler
 require_once get_template_directory() . '/inc/filter-ajax-handler.php';
+
+// Contact Function
+require_once get_template_directory() . '/inc/contact.php';
