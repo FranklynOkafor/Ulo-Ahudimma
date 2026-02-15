@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to get the doctors for a specific department
   function fetchDoctors(department) {
     const formData = new FormData();
-    formData.append('action', 'filtered_doctors')
-    formData.append('departmnt', department)
+    formData.append('action', 'filter_doctors')
+    formData.append('department', department)
 
-    fetch(ulo_ajax.ajax_url, {
+    fetch(ahudimmaAjax.ajax_url, {
       method: "POST",
       body: formData
     })
