@@ -300,6 +300,8 @@
   gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
+  width: fit-content;
+  justify-self: right;
 }
 
 .doctor-filters select,
