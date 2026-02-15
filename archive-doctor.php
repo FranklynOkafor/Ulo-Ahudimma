@@ -30,37 +30,33 @@ get_header();
 
 
     <div class="doctor-filters">
-      <form method="get" action="<?php echo esc_url(get_post_type_archive_link('doctor')); ?>">
-        <select name="department" id="department-filter">
-          <option value="">All Departments</option>
-          <?php
-          $departments = get_posts(array(
-            'post_type' => 'department',
-            'posts_per_page' => -1,
-            'orderby' => 'title',
-            'order' => 'ASC'
-          ));
 
-          foreach ($departments as $dept) :
-            $selected = (isset($_GET['department']) && $_GET['department'] == $dept->ID) ? 'selected' : '';
-          ?>
-            <option value="<?php echo esc_attr($dept->ID); ?>" <?php echo $selected; ?>>
-              <?php echo esc_html($dept->post_title); ?>
-            </option>
-          <?php endforeach; ?>
-        </select>
+      <select name="department" id="department-filter">
+        <option value="">All Departments</option>
+        <?php
+        $departments = get_posts(array(
+          'post_type' => 'department',
+          'posts_per_page' => -1,
+          'orderby' => 'title',
+          'order' => 'ASC'
+        ));
 
-        
+        foreach ($departments as $dept) :
+          $selected = (isset($_GET['department']) && $_GET['department'] == $dept->ID) ? 'selected' : '';
+        ?>
+          <option value="<?php echo esc_attr($dept->ID); ?>" <?php echo $selected; ?>>
+            <?php echo esc_html($dept->post_title); ?>
+          </option>
+        <?php endforeach; ?>
+      </select>
 
-        <button type="submit">Filter</button>
-      </form>
     </div>
 
-    
+
 
     <?php if (have_posts()) : ?>
 
-      <div class="doctor-grid">
+      <div class="doctor-grid doctor-results">
 
         <?php while (have_posts()) : the_post();
 

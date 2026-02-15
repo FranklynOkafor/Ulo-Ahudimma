@@ -61,6 +61,21 @@ function ulo_ahudimma_enqueue_assets()
 		filemtime(get_template_directory() . '/assets/js/search.js'),
 		true
 	);
+
+	// Filter Scripts
+	wp_enqueue_script(
+		'ahudimma-filter-scripts',
+		get_template_directory_uri() . '/assets/js/filter-doctor.js',
+		array(),
+		filemtime(get_template_directory() . '/assets/js/filter-doctor.js'),
+		true
+	);
+	wp_localize_script('ahudimma-filter-scripts', 'ahudimmaAjax', [
+		'ajax_url' => admin_url('admin-ajax.php')
+	]);
+
+
+
 	
 	// Appointment Script
 	wp_enqueue_script(
