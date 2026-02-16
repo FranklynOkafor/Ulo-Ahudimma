@@ -1,4 +1,140 @@
 <?php
+/**
+ * Homepage Functions
+ * Add these to your functions.php
+ * 
+ * @package Ahudimma
+ */
+
+// ========================================
+// 1. ENQUEUE HOMEPAGE ASSETS
+// ========================================
+
+function ahudimma_enqueue_homepage_assets() {
+    // Only load on homepage
+    if (is_front_page() || is_page_template('front-page.php')) {
+        
+        // Enqueue CSS
+        wp_enqueue_style(
+            'homepage-styles',
+            get_template_directory_uri() . '/assets/css/homepage-styles.css',
+            array(),
+            '1.0.0'
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'ahudimma_enqueue_homepage_assets');
+
+// ========================================
+// 2. ADD HOMEPAGE CUSTOMIZER SETTINGS
+// ========================================
+
+function ahudimma_homepage_customizer_settings($wp_customize) {
+    
+    // Add section for Homepage Settings
+    $wp_customize->add_section('ahudimma_homepage', array(
+        'title'    => __('Homepage Settings', 'ulo-ahudimma'),
+        'priority' => 132,
+    ));
+    
+    // ==========================================
+    // HERO SECTION
+    // ==========================================
+    
+    // Hero Title
+    $wp_customize->add_setting('hero_title', array(
+        'default'           => 'Quality Healthcare For You & Your Family',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hero_title', array(
+        'label'   => __('Hero Title', 'ulo-ahudimma'),
+        'section' => 'ahudimma_homepage',
+        'type'    => 'text',
+    ));
+    
+    // Hero Subtitle
+    $wp_customize->add_setting('hero_subtitle', array(
+        'default'           => 'Providing compassionate, expert care with state-of-the-art facilities and a dedicated team of healthcare professionals.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('hero_subtitle', array(
+        'label'   => __('Hero Subtitle', 'ulo-ahudimma'),
+        'section' => 'ahudimma_homepage',
+        'type'    => 'textarea',
+    ));
+    
+    // Hero Background Image
+    $wp_customize->add_setting('hero_background_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_image', array(
+        'label'       => __('Hero Background Image', 'ulo-ahudimma'),
+        'description' => __('Optional background image for hero section', 'ulo-ahudimma'),
+        'section'     => 'ahudimma_homepage',
+    )));
+    
+    // ==========================================
+    // ABOUT SECTION
+    // ==========================================
+    
+    // About Intro
+    $wp_customize->add_setting('about_intro', array(
+        'default'           => 'We are dedicated to providing the highest quality healthcare services to our community.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('about_intro', array(
+        'label'   => __('About Section Text', 'ulo-ahudimma'),
+        'section' => 'ahudimma_homepage',
+        'type'    => 'textarea',
+    ));
+    
+    // About Home Image
+    $wp_customize->add_setting('about_home_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_home_image', array(
+        'label'   => __('About Section Image', 'ulo-ahudimma'),
+        'section' => 'ahudimma_homepage',
+    )));
+}
+add_action('customize_register', 'ahudimma_homepage_customizer_settings');
+
+// ========================================
+// 3. OUTPUT HERO BACKGROUND IMAGE CSS
+// ========================================
+
+function ahudimma_hero_background_css() {
+    $hero_bg = get_theme_mod('hero_background_image');
+    
+    if ($hero_bg && is_front_page()) :
+    ?>
+    <style>
+        .hero-section {
+            background-image: url('<?php echo esc_url($hero_bg); ?>');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-section::before {
+            background: rgba(10, 31, 61, 0.7);
+        }
+    </style>
+    <?php
+    endif;
+}
+add_action('wp_head', 'ahudimma_hero_background_css');
+
+
+
+
+
+
+
+
+
+
 function ahudimma_handle_appointment_submission()
 {
 
@@ -131,15 +267,6 @@ function ahudimma_load_doctors_by_department()
 
 add_action('wp_ajax_load_doctors_by_department', 'ahudimma_load_doctors_by_department');
 add_action('wp_ajax_nopriv_load_doctors_by_department', 'ahudimma_load_doctors_by_department');
-
-
-
-
-
-
-
-
-
 
 
 
