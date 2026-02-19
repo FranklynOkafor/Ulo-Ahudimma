@@ -3,9 +3,10 @@
     <input type="hidden" name="action" value="submit_appointment">
     <?php wp_nonce_field( 'submit_appointment_nonce', 'appointment_nonce' ); ?>
 
+
     <input type="text" name="patient_name" placeholder="Full Name" required>
     <input type="tel" name="patient_phone" placeholder="Phone Number" required>
-    <input type="email" name="patient_email" placeholder="Email Address">
+    <input type="email" name="patient_email" placeholder="Email Address" required>
 
     <!-- Department -->
     <select name="appointment_department" id="appointment-department" required>
@@ -32,6 +33,6 @@
 
     <textarea name="appointment_notes" placeholder="Additional notes (optional)"></textarea>
 
-    <button type="submit" class="btn">Submit Appointment</button>
+    <button type="submit" class="btn appointment-submit">Submit Appointment</button>
 
 </form>

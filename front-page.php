@@ -130,7 +130,7 @@ get_header();
       <div class="section-header">
         <span class="section-label"><?php esc_html_e('Our Departments', 'ulo-ahudimma'); ?></span>
         <h2><?php esc_html_e('Medical Services We Offer', 'ulo-ahudimma'); ?></h2>
-        <p><?php esc_html_e('Comprehensive healthcare services across multiple specialties', 'ulo-ahudimma'); ?></p>
+        <p class="sec-p"><?php esc_html_e('Comprehensive healthcare services across multiple specialties', 'ulo-ahudimma'); ?></p>
       </div>
 
       <?php

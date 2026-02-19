@@ -36,3 +36,13 @@ jQuery(document).ready(function ($) {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".appointment-form");
+  const submitBtn = document.querySelector(".appointment-submit");
+
+  form.addEventListener("submit", function () {
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Processing...";
+  });
+});

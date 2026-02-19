@@ -253,6 +253,9 @@
 .section-header {
   text-align: center;
   margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-header h2 {
@@ -267,9 +270,10 @@
   font-size: 1.0625rem;
   color: var(--text-light, #64748b);
   max-width: 700px;
-  margin: 0 auto;
+  margin: 10px auto;
   line-height: 1.6;
 }
+
 
 /* ========== ABOUT SECTION ========== */
 .about-section {
