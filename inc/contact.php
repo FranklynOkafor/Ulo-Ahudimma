@@ -14,18 +14,11 @@ function ahudimma_enqueue_contact_assets() {
     // Only load on contact page
     if (is_page('contact') || is_page_template('page-contact.php')) {
         
-        // Enqueue CSS
-        wp_enqueue_style(
-            'contact-page',
-            get_template_directory_uri() . '/assets/css/contact-page-styles.css',
-            array(),
-            '1.0.0'
-        );
         
         // Enqueue JavaScript
         wp_enqueue_script(
             'contact-form',
-            get_template_directory_uri() . '/assets/js/contact-form.js',
+            get_template_directory_uri() . '/assets/js/contact.js',
             array(),
             '1.0.0',
             true

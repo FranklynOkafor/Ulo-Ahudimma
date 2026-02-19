@@ -22,9 +22,6 @@ function ulo_ahudimma_enqueue_assets()
 
 
 
-
-
-
 	// Main JavaScript file
 	wp_enqueue_script(
 		'ulo-ahudimma-main',
@@ -46,7 +43,7 @@ function ulo_ahudimma_enqueue_assets()
 	// Footer Script
 	wp_enqueue_script(
 		'ahudimma-footer-scripts',
-		get_template_directory_uri() . '/assets/js/footer-scripts.js',
+		get_template_directory_uri() . '/assets/js/footer.js',
 		array(),
 		filemtime(get_template_directory() . '/assets/js/footer.js'),
 		true
@@ -62,36 +59,42 @@ function ulo_ahudimma_enqueue_assets()
 		true
 	);
 
+
 	// Filter Scripts
-	wp_enqueue_script(
-		'ahudimma-filter-scripts',
-		get_template_directory_uri() . '/assets/js/filter-doctor.js',
-		array(),
-		filemtime(get_template_directory() . '/assets/js/filter-doctor.js'),
-		true
-	);
-	wp_localize_script('ahudimma-filter-scripts', 'ahudimmaAjax', [
-		'ajax_url' => admin_url('admin-ajax.php')
-	]);
+
+	if (is_post_type_archive('doctor')) {
+		wp_enqueue_script(
+			'ahudimma-filter-scripts',
+			get_template_directory_uri() . '/assets/js/filter-doctor.js',
+			array(),
+			filemtime(get_template_directory() . '/assets/js/filter-doctor.js'),
+			true
+		);
+		wp_localize_script('ahudimma-filter-scripts', 'ahudimmaAjax', [
+			'ajax_url' => admin_url('admin-ajax.php')
+		]);
+	}
 
 
 
-	
 	// Appointment Script
-	wp_enqueue_script(
-		'ahudimma-appointment-scripts',
-		get_template_directory_uri() . '/assets/js/appointment.js',
-		['jquery'],
-		filemtime(get_template_directory() . '/assets/js/appointment.js'),
-		true
-	);
-	wp_localize_script('ahudimma-appointment-scripts', 'ahudimmaAjax', [
-		'ajax_url' => admin_url('admin-ajax.php'),
-		'nonce'    => wp_create_nonce('load_doctors_nonce')
-	]);
+	if (is_page('book-appointment')) {
+		wp_enqueue_script(
+			'ahudimma-appointment-scripts',
+			get_template_directory_uri() . '/assets/js/appointment.js',
+			['jquery'],
+			filemtime(get_template_directory() . '/assets/js/appointment.js'),
+			true
+		);
+		wp_localize_script('ahudimma-appointment-scripts', 'ahudimmaAjax', [
+			'ajax_url' => admin_url('admin-ajax.php'),
+			'nonce'    => wp_create_nonce('load_doctors_nonce')
+		]);
+	}
 
 
-	// Cintact Script
+
+	// Contact Script
 	wp_enqueue_script(
 		'ahudimma-contact-scripts',
 		get_template_directory_uri() . '/assets/js/contact.js',

@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const departmentSelect = document.querySelector("#department-filter");
   const resultContainer = document.querySelector(".doctor-results");
 
+
+  // console.log(departmentSelect)
   departmentSelect.addEventListener("change", function () {
     const department = this.value;
     fetchDoctors(department)
